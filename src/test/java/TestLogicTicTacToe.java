@@ -3,7 +3,6 @@ import org.example.GUI;
 import org.example.Logic;
 import org.example.LogicTicTacToe;
 import org.example.Player;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
