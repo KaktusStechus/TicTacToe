@@ -50,4 +50,5 @@ public class TestLogicTicTacToe {
 		Assert.assertTrue(logic.isGameOver());
 		Assert.assertNotNull(logic.checkVictoryCondition(Player.X));
 	}
+
 }
