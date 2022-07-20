@@ -1,14 +1,12 @@
-package tests;
 
+import org.example.GUI;
+import org.example.Logic;
+import org.example.LogicTicTacToe;
+import org.example.Player;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import implementation.GUI;
-import implementation.Logic;
-import implementation.LogicTicTacToe;
-import implementation.Player;
 
 
 public class TestLogicTicTacToe { 
@@ -17,13 +15,9 @@ public class TestLogicTicTacToe {
 	GUI gui;
 	
 	@Before
-	public void setUp() throws Exception {		
+	public void setUp() {
 		logic = new LogicTicTacToe();
 		gui = new GUI(logic);
-	}
-
-	@After
-	public void tearDown() throws Exception {
 	}
 
 	@Test
@@ -60,7 +54,7 @@ public class TestLogicTicTacToe {
 		Assert.assertNotNull(logic.checkVictoryCondition(Player.X));
 	}
 	
-	@Test 
+	@Test
 	public void testGUItoLogicConnection() {
 		Assert.assertArrayEquals(gui.getLogic().getBoard(), new String[][]{{"-", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}});
 		gui.getLogic().makeTurn(0, 0);

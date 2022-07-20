@@ -1,10 +1,10 @@
-package implementation;
+package org.example;
 
 import javax.swing.JLabel;
 
 public class MyJLabel extends JLabel {
-	private int xCoord;
-	private int yCoord;
+	private final int xCoord;
+	private final int yCoord;
 	
 	public MyJLabel(int x, int y) {
 		xCoord = x;

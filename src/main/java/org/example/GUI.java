@@ -1,4 +1,4 @@
-package implementation;
+package org.example;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -21,7 +21,6 @@ import javax.swing.JPanel;
 public class GUI {
 	
 	private JPanel gameField;
-	private ClassLoader cldr;
 	private ImageIcon imageX;
 	private ImageIcon imageO;
 	private ImageIcon imageBG;
@@ -31,26 +30,29 @@ public class GUI {
 		
 	public GUI(Logic logic) {
 		this.logic = logic;
-		cldr = Main.class.getClassLoader();
-		imageX = new ImageIcon(cldr.getResource("images/pic_x.jpg"));
-		imageO = new ImageIcon(cldr.getResource("images/pic_o.jpg"));
-		imageBG = new ImageIcon(cldr.getResource("images/pic_bg.jpg"));
-		
-    	window = new JFrame("Tic-Tac-Toe"); 	
-    	window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	window.setBounds(0,0,200,200);
-    	
-    	JPanel mainPanel = new JPanel();
-    	BoxLayout vertical = new BoxLayout(mainPanel, BoxLayout.Y_AXIS);
-    	mainPanel.setLayout(vertical);
-    	mainPanel.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));    	
+		try {
+			imageX = new ImageIcon(Main.class.getResource("/pic_x.jpg"));
+			imageO = new ImageIcon(Main.class.getResource("/pic_o.jpg"));
+			imageBG = new ImageIcon(Main.class.getResource("/pic_bg.jpg"));
 
-    	mainPanel.add(Box.createVerticalStrut(10));
-    	mainPanel.add(createCommandBar());
-    	mainPanel.add(Box.createVerticalStrut(10));
-    	mainPanel.add(createGameField());
+			window = new JFrame("Tic-Tac-Toe");
+			window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			window.setBounds(0, 0, 200, 200);
 
-    	window.getContentPane().add(mainPanel);
+			JPanel mainPanel = new JPanel();
+			BoxLayout vertical = new BoxLayout(mainPanel, BoxLayout.Y_AXIS);
+			mainPanel.setLayout(vertical);
+			mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+			mainPanel.add(Box.createVerticalStrut(10));
+			mainPanel.add(createCommandBar());
+			mainPanel.add(Box.createVerticalStrut(10));
+			mainPanel.add(createGameField());
+
+			window.getContentPane().add(mainPanel);
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		}
     }
 	
 	public JButton getNewGameBtn() {
@@ -74,16 +76,12 @@ public class GUI {
     	newGameBtn = new JButton();
     	newGameBtn.setAlignmentX(Component.LEFT_ALIGNMENT);
     	newGameBtn.setText("New Game");
-    	newGameBtn.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				logic = new LogicTicTacToe();
-				for (Component c : gameField.getComponents()) {
-					if (c instanceof JLabel) {
-						((JLabel) c).setIcon(imageBG);
-						((JLabel) c).setBorder(BorderFactory.createLineBorder(Color.GRAY, 5));
-					}
+    	newGameBtn.addActionListener(e -> {
+			logic = new LogicTicTacToe();
+			for (Component c : gameField.getComponents()) {
+				if (c instanceof JLabel) {
+					((JLabel) c).setIcon(imageBG);
+					((JLabel) c).setBorder(BorderFactory.createLineBorder(Color.GRAY, 5));
 				}
 			}
 		});

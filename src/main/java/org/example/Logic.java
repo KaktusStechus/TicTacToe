@@ -1,9 +1,9 @@
-package implementation;
+package org.example;
 
 public abstract class Logic {
 
 
-	protected String[][] board;			// unser logisches Spielbrett, Felder werden standardmäßig mit "-" besetzt
+	protected String[][] board;			// unser logisches Spielbrett, Felder werden standardmï¿½ï¿½ig mit "-" besetzt
 	protected Player currentPlayer;		// aktueller Spieler, X oder O
 	protected boolean gameOver;			// true wenn das Spiel zu ende ist
 	
@@ -20,18 +20,18 @@ public abstract class Logic {
 	}
 	
 	/*
-	 * Ist ein Feld bereits besetzt, wird false zurückgegeben.
+	 * Ist ein Feld bereits besetzt, wird false zurï¿½ckgegeben.
 	 * Ansonsten wird das Symbol des aktuellen Spielers in das jeweilige Feld gesetzt.
-	 * Danach werden die Siegesbedingungen geprüft, und gameOver, wenn nötig, auf true gesetzt.
-	 * Im anschluss wird der aktuelle Spieler gewechselt und true zurückgegeben.
+	 * Danach werden die Siegesbedingungen geprï¿½ft, und gameOver, wenn nï¿½tig, auf true gesetzt.
+	 * Im anschluss wird der aktuelle Spieler gewechselt und true zurï¿½ckgegeben.
 	 */
 	public abstract boolean makeTurn(int x, int y);
 	
 	/*
-	 * Die Siegesbedingungen hängen von dem jeweiligen Spiel ab (Drei Gewinnt, Vier in einer Reihe, etc.)
-	 * Sind die Siegesbedingungen erfüllt, wird ein int Array mit den Koordinaten der siegreichen Felder zurückgegeben.
+	 * Die Siegesbedingungen hï¿½ngen von dem jeweiligen Spiel ab (Drei Gewinnt, Vier in einer Reihe, etc.)
+	 * Sind die Siegesbedingungen erfï¿½llt, wird ein int Array mit den Koordinaten der siegreichen Felder zurï¿½ckgegeben.
 	 * Dieser wird von der GUI verwendet um die Felder zu markieren.
-	 * Ansonsten wird null zurückgegeben.
+	 * Ansonsten wird null zurï¿½ckgegeben.
 	 */
 	public abstract int[][] checkVictoryCondition(Player player);
 }
