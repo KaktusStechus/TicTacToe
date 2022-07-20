@@ -11,12 +11,10 @@ import org.junit.Test;
 public class TestLogicTicTacToe { 
 
 	Logic logic;
-	GUI gui;
 	
 	@Before
 	public void setUp() {
 		logic = new LogicTicTacToe();
-		gui = new GUI(logic);
 	}
 
 	@Test
@@ -51,15 +49,6 @@ public class TestLogicTicTacToe {
 		Assert.assertArrayEquals(logic.getBoard(), new String[][]{{"X", "-", "-"}, {"X", "O", "-"}, {"X", "O", "-"}});
 		Assert.assertTrue(logic.isGameOver());
 		Assert.assertNotNull(logic.checkVictoryCondition(Player.X));
-	}
-	
-	@Test
-	public void testGUItoLogicConnection() {
-		Assert.assertArrayEquals(gui.getLogic().getBoard(), new String[][]{{"-", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}});
-		gui.getLogic().makeTurn(0, 0);
-		Assert.assertArrayEquals(gui.getLogic().getBoard(), new String[][]{{"X", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}});
-		gui.getNewGameBtn().doClick();
-		Assert.assertArrayEquals(gui.getLogic().getBoard(), new String[][]{{"-", "-", "-"}, {"-", "-", "-"}, {"-", "-", "-"}});
 	}
 
 }
