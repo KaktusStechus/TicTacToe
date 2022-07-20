@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1a05c31-41f2-44a5-840e-dd8f6e7482a5" name="Changes" comment="changed source and target to 1.8">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d1a05c31-41f2-44a5-840e-dd8f6e7482a5" name="Changes" comment="removed unused import">
       <change beforePath="$PROJECT_DIR$/src/test/java/TestLogicTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestLogicTicTacToe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658333860537</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="removed unused import">
+      <created>1658334178006</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1658334178006</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +118,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed source and target to 1.8" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed source and target to 1.8" />
+    <MESSAGE value="removed unused import" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed unused import" />
   </component>
 </project>
