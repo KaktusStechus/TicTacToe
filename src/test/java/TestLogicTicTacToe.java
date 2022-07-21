@@ -1,5 +1,4 @@
 
-import org.example.GUI;
 import org.example.Logic;
 import org.example.LogicTicTacToe;
 import org.example.Player;

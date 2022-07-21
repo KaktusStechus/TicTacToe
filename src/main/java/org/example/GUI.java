@@ -3,8 +3,6 @@ package org.example;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -26,8 +24,7 @@ public class GUI {
 	private ImageIcon imageBG;
 	private Logic logic;
 	private JFrame window;
-	private JButton newGameBtn;
-		
+
 	public GUI(Logic logic) {
 		this.logic = logic;
 		try {
@@ -55,14 +52,6 @@ public class GUI {
 		}
     }
 	
-	public JButton getNewGameBtn() {
-		return newGameBtn;
-	}
-	
-	public Logic getLogic() {
-		return logic;
-	}
-	
 	public void show() {
     	window.pack();
 		window.setVisible(true);
@@ -72,8 +61,8 @@ public class GUI {
 		JPanel commandBar = new JPanel();
     	BoxLayout horizonal = new BoxLayout(commandBar, BoxLayout.X_AXIS);
     	commandBar.setLayout(horizonal);
-    	
-    	newGameBtn = new JButton();
+
+		JButton newGameBtn = new JButton();
     	newGameBtn.setAlignmentX(Component.LEFT_ALIGNMENT);
     	newGameBtn.setText("New Game");
     	newGameBtn.addActionListener(e -> {
